@@ -8,6 +8,7 @@ CREATE TABLE utilisateurs (
                               prenom VARCHAR(50),
                               adresse TEXT,
                               email VARCHAR(100),
+                              password VARCHAR(255),
                               telephone VARCHAR(20)
 );
 
@@ -15,7 +16,8 @@ CREATE TABLE produits (
                           id INT PRIMARY KEY AUTO_INCREMENT,
                           nom VARCHAR(100),
                           description TEXT,
-                          prix DECIMAL(10,2)
+                          prix DECIMAL(10,2),
+                          image VARCHAR(255)
 );
 
 CREATE TABLE commandes (
@@ -35,13 +37,13 @@ CREATE TABLE commande_produit (
                                   FOREIGN KEY (produit_id) REFERENCES produits(id)
 );
 
-INSERT INTO utilisateurs (nom, prenom, adresse, email, telephone)
-VALUES ('Dupont', 'Marie', '10 rue des Lilas, Paris', 'marie.dupont@example.com', '0601020304');
+INSERT INTO utilisateurs (nom, prenom, adresse, email, telephone, password)
+VALUES ('Dupont', 'Marie', '10 rue des Lilas, Paris', 'marie.dupont@example.com', '0601020304', '$2b$10$exempledehash');
 
-INSERT INTO produits (nom, description, prix) VALUES
-                                                  ('T-shirt blanc', 'Coton bio', 19.90),
-                                                  ('Jeans bleu', 'Slim fit', 49.99),
-                                                  ('Sweat noir', 'Capuche + poche', 34.50);
+INSERT INTO produits (nom, description, prix, image) VALUES
+                                                         ('T-shirt blanc', 'Coton bio', 19.90, 'https://picsum.photos/id/1011/300/200'),
+                                                         ('Jeans bleu', 'Slim fit', 49.99, 'https://picsum.photos/id/1001/300/200'),
+                                                         ('Sweat noir', 'Capuche + poche', 34.50, 'https://picsum.photos/id/1005/300/200');
 
 INSERT INTO commandes (utilisateur_id, statut) VALUES (1, 'en_attente');
 
