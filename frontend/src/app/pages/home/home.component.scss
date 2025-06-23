@@ -1,0 +1,82 @@
+.produits-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+
+  .liste-produits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .produit-carte {
+    flex: 0 1 260px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .infos {
+      text-align: center;
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+        color: #333;
+      }
+
+      .description {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .prix {
+        font-weight: bold;
+        color: #28a745;
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}

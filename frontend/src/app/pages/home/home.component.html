@@ -1,0 +1,15 @@
+<div class="produits-page">
+  <h2>🛍️ Nos Produits</h2>
+
+  <div class="liste-produits">
+    <div class="produit-carte" *ngFor="let produit of produits">
+      <img [src]="produit.image" [alt]="produit.nom" />
+      <div class="infos">
+        <h3>{{ produit.nom }}</h3>
+        <div class="description">{{ produit.description }}</div>
+        <div class="prix">{{ produit.prix }} €</div>
+        <button>🛒 Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+</div>
