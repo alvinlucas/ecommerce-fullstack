@@ -3,5 +3,14 @@
   <nav class="nav">
     <a routerLink="/" routerLinkActive="active">Accueil</a>
     <a routerLink="/panier" routerLinkActive="active">Panier</a>
+
+    <ng-container *ngIf="isLoggedIn; else loginLink">
+      <a routerLink="/compte" routerLinkActive="active">Mon compte</a>
+      <a (click)="logout()" class="lien-deconnexion">Déconnexion</a>
+    </ng-container>
+
+    <ng-template #loginLink>
+      <a routerLink="/auth" routerLinkActive="active">Connexion</a>
+    </ng-template>
   </nav>
 </header>

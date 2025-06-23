@@ -1,5 +1,5 @@
 <div class="produits-page">
-  <h2>🛍️ Nos Produits</h2>
+  <h2>Nos Produits</h2>
 
   <div class="liste-produits">
     <div class="produit-carte" *ngFor="let produit of produits">
@@ -8,8 +8,20 @@
         <h3>{{ produit.nom }}</h3>
         <div class="description">{{ produit.description }}</div>
         <div class="prix">{{ produit.prix }} €</div>
-        <button>🛒 Ajouter au panier</button>
+        <div class="boutons">
+        <button (click)="ajouterAuPanier(produit)">Ajouter au panier</button>
+        <button class="btn-details" (click)="ouvrirDetails(produit)">Détails</button>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="overlay" *ngIf="detailsVisible" (click)="fermerDetails()"></div>
+  <div class="modal" *ngIf="detailsVisible">
+    <h3>{{ produitSelectionne?.nom }}</h3>
+    <img [src]="produitSelectionne?.image" [alt]="produitSelectionne?.nom" />
+    <p><strong>Description :</strong> {{ produitSelectionne?.description }}</p>
+    <p><strong>Prix :</strong> {{ produitSelectionne?.prix }} €</p>
+    <button (click)="fermerDetails()">Fermer</button>
   </div>
 </div>
