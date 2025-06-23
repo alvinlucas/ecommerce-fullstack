@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PanierService } from '../../services/panier.service';
 import { Produit } from '../../services/produit.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-panier',
@@ -14,7 +13,7 @@ import { Router } from '@angular/router';
 export class PanierComponent implements OnInit {
   produits: Produit[] = [];
 
-  constructor(private panierService: PanierService, private router: Router) {}
+  constructor(private panierService: PanierService) {}
 
   ngOnInit(): void {
     this.panierService.panier$.subscribe((data) => {
@@ -35,7 +34,5 @@ export class PanierComponent implements OnInit {
     return total.toFixed(2).replace('.', ',');
   }
 
-  validerCommande() {
-    this.router.navigate(['/checkout']);
-  }
+
 }

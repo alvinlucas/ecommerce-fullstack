@@ -86,30 +86,17 @@
       margin-bottom: 1rem;
     }
 
-    .actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: flex-end;
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
 
-      .vider {
-        background-color: #dc3545;
-      }
-
-      .valider {
-        background-color: #28a745;
-      }
-
-      button {
-        color: white;
-        border: none;
-        padding: 0.6rem 1.2rem;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 1rem;
-
-        &:hover {
-          opacity: 0.9;
-        }
+      &:hover {
+        background-color: #0056b3;
       }
     }
   }

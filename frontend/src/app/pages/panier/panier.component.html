@@ -19,9 +19,6 @@
 
   <div *ngIf="produits.length > 0" class="footer-panier">
     <div class="total">Total : {{ total() }} €</div>
-    <div class="actions">
-      <button class="vider" (click)="vider()">Vider le panier</button>
-      <button class="valider" (click)="validerCommande()"> Valider la commande</button>
-    </div>
+    <button (click)="vider()"> Vider le panier</button>
   </div>
 </div>
